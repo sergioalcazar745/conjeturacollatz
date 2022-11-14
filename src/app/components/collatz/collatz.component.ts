@@ -21,19 +21,19 @@ export class CollatzComponent implements OnInit {
   }
 
   metodocollatz(num:number){
+    this.lista.splice(0)
     var resultado = num
-    for (let i = 0; i < 10; i++) {
+    while (true) {
       if(resultado % 2 == 0){
-        console.log(num)
-        resultado = num / 2;
-        console.log(resultado)
-        this.lista.push(resultado)
+        resultado = resultado / 2;        
         if(resultado == 1){
           this.lista.push(resultado)
-        }
-        console.log(resultado)
+          break;
+        }else{
+          this.lista.push(resultado)
+        }        
       }else{
-        resultado = (num * 3) + 1 
+        resultado = (resultado * 3) + 1 
         this.lista.push(resultado)
       }      
     }
