@@ -1,0 +1,5 @@
+<div *ngIf="randoms.length > 0">
+    <ul *ngFor="let num of randoms">
+        <li><a [routerLink]="['/collatz', num]">{{num}}</a></li>
+    </ul>
+</div>
